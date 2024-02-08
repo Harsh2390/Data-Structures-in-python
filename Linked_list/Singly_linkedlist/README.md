@@ -17,7 +17,7 @@ No additional libraries are required to use this singly linked list implementati
 
 ### Usage
 To use this singly linked list in your project, import the Linkedlist class from the linkedlist.py file. Here's a quick example to get you started:
-'''
+``` Python
 from linkedlist import Linkedlist
 
 # Create a new Linked List
