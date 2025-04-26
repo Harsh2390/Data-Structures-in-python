@@ -1,24 +1,103 @@
-# Data-Structures-in-python
-"Explore the World of Data Structures with Python - A Comprehensive Repository"
+# Data Structures in python
+## Overview
+This repository contains Python implementations of common data structures with comprehensive documentation and unit tests. Each data structure is thoroughly explained with time and space complexity analysis, real-world applications, advantages, disadvantages, and visual representations where applicable.
 
-## Project Description
-'This repository is dedicated to the implementation of fundamental data structures in Python. It aims to provide clear, efficient and tested code examples for structures such as arrays, linked lists, stacks, queues, trees, and graphs. This project serves as a resource for students, educators, and professionals looking to deepen their understanding of data structures and their applications in Python.'
+## Purpose
+This repository serves as:
+
+* A learning resource for understanding fundamental data structures
+* A reference for Python implementations with proper type hints and docstrings
+* A showcase of clean, well-documented code following best practices
+* A practical guide to data structure selection based on operational requirements
+
+## Repository Structure
+```
+data-structures-python/
+│
+├── README.md                 # This file
+├── .gitignore                # Standard Python gitignore
+│
+├── arrays/                   # Array-based structures
+│   ├── README.md             # Overview of array structures
+│   ├── static_array/
+│   │   ├── README.md         # Documentation for static arrays
+│   │   ├── static_array.py   # Implementation
+│   │   └── test_static_array.py  # Unit tests
+│   └── dynamic_array/
+│       ├── ...
+│
+├── linked_structures/        # Linked structures
+│   ├── README.md
+│   ├── singly_linked_list/
+│   │   ├── ...
+│   └── ...
+│
+└── ...
+```
+## Each Structure Features
+For each data structure, you'll find:
+
+1. Comprehensive README:
+
+    * Definition and conceptual explanations
+    * Visual representations
+    * Real-world applications
+    * Advantages and disadvantages
+    * Time complexity analysis for all operations
+    * Space complexity analysis
+    * Comparisons with similar structures
+
+
+2. Clean Implementation:
+
+    * Well-documented Python code with type hints
+    * Comprehensive docstrings
+    * Error handling
+    * Usage examples
+
+
+3. Unit Tests:
+
+    * Tests for all operations
+    * Edge case coverage
 
 ## Installation
-To use these implementations, first clone the repository to your local machine: <br />
-git clone https://github.com/Harsh2390/Data-Structures-in-python.git <br />
-cd python-data-structures
 
-"Ensure you have Python installed on your system. No additional libraries are required for the basic data structure implementations."
+```
+# Clone the repository
+git clone https://github.com/Harsh2390/Data-Structures-in-python.git
+
+# Navigate to the repository directory
+cd data-structures-python
+
+# Optional: Create a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install any dependencies (if applicable)
+pip install -r requirements.txt
+```
 
 ## Usage
-Each data structure is implemented in its separate module. To use a data structure in your code, simply import the respective class from the module. For example, to use the LinkedList class:
+Each data structure can be imported and used independently:
+```
+# Example: Using a singly linked list
+from linked_structures.singly_linked_list.singly_linked_list import SinglyLinkedList
 
-```python
-from linked_list import LinkedList
+# Create a new list
+my_list = SinglyLinkedList()
 
-# Create a new LinkedList
-my_list = LinkedList()
+# Add elements
 my_list.append(1)
 my_list.append(2)
-my_list.display()
+my_list.append(3)
+
+# Display the list
+print(my_list)  # Output: 1 -> 2 -> 3 -> None
+
+# Get the length
+print(len(my_list))  # Output: 3
+```
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
