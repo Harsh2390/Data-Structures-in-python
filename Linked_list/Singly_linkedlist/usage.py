@@ -5,7 +5,7 @@ This script demonstrates typical operations and practical applications
 of the SinglyLinkedList implementation.
 """
 
-from singly_linked_list import SinglyLinkedList
+from Slinkedlist import SinglyLinkedList
 
 
 def main():
