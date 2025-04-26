@@ -1,48 +1,153 @@
-# Linked List Overview
+# Linked Lists
 
-## Introduction
-A linked list is a linear data structure where elements are not stored at contiguous memory locations. Instead, each element (known as a node) contains data and a reference (or link) to the next node in the sequence. Linked lists allow for efficient insertion and deletion of elements as these operations do not require the reorganization of the entire data structure.
+## Overview
+
+A linked list is a linear data structure consisting of a sequence of elements where each element points to the next element in the sequence. Unlike arrays, linked lists don't store elements in contiguous memory locations, instead using pointers or references to connect elements together.
+
+```
+Singly Linked List:
+[Node] -> [Node] -> [Node] -> [Node] -> null
+  |        |        |        |
+ data     data     data     data
+
+Doubly Linked List:
+null <- [Node] <-> [Node] <-> [Node] <-> [Node] -> null
+         |          |          |          |
+        data       data       data       data
+```
+
+## Key Characteristics
+
+- **Dynamic Size**: Linked lists can grow or shrink during execution
+- **No Random Access**: Elements must be accessed sequentially
+- **Efficient Insertions/Deletions**: No need to shift elements (unlike arrays)
+- **Extra Memory**: Requires additional memory for storing references
+- **No Locality of Reference**: Elements are not stored contiguously in memory
 
 ## Types of Linked Lists
-There are three main types of linked lists:
-1. **Singly Linked Lists**
-2. **Doubly Linked Lists**
-3. **Circular Linked Lists**
 
 ### Singly Linked List
-A singly linked list is a collection of nodes that together form a linear sequence. Each node stores a reference to an object that is an element of the sequence, as well as a reference to the next node of the list. The first node has a reference from an external source (head), and the last node points to `None`.
-
-**Time Complexity:**
-- Access: O(n)
-- Search: O(n)
-- Insertion: O(1) at the beginning, O(n) at the end
-- Deletion: O(1) at the beginning, O(n) to remove a specific element
+- Each node contains data and a reference to the next node
+- Traversal is one-directional (forward only)
+- Memory efficient compared to other variants
+- Limited operations (cannot easily traverse backward)
 
 ### Doubly Linked List
-A doubly linked list is similar to a singly linked list, but each node contains two links: the first links to the previous node, and the second links to the next node in the sequence. This allows for a bidirectional traversal of the list.
-
-**Time Complexity:**
-- Access: O(n)
-- Search: O(n)
-- Insertion: O(1) for inserting at the beginning or end
-- Deletion: O(1) for deleting at the beginning or end
+- Each node contains data and references to both next and previous nodes
+- Bidirectional traversal possible
+- More memory overhead than singly linked lists
+- More efficient for certain operations (like deletion when given a node)
 
 ### Circular Linked List
-A circular linked list is either singly or doubly linked where the last node, instead of pointing to `None`, points back to the first node. This forms a circular loop. A circular linked list can be either singly circular or doubly circular.
+- Can be either singly or doubly linked
+- The last node points back to the first node (no null termination)
+- Enables continuous traversal through the list
+- Useful for applications requiring cyclical representation
 
-**Time Complexity:**
-- Access: O(n)
-- Search: O(n)
-- Insertion: O(1) if the tail is known, otherwise O(n)
-- Deletion: O(1) to remove from the beginning, O(n) to remove a specific element if the tail is not directly accessible
+### Skip List
+- Probabilistic data structure with multiple layers
+- Express lanes for faster traversal (O(log n) search time)
+- Combines linked list simplicity with tree-like search efficiency
+- Randomized structure that provides expected O(log n) operations
 
-## Advantages of Linked Lists
-- Dynamic data structure: Linked lists are dynamic and can grow and shrink in size without the need for reallocation or reorganization of the entire structure.
-- Efficient Insertions/Deletions: Adding or removing elements from a linked list is more efficient in terms of time complexity compared to arrays or other linear data structures.
+### XOR Linked List
+- Memory-efficient variant of a doubly linked list
+- Uses bitwise XOR operation to store both next and previous references in a single pointer
+- Significantly reduces memory usage
+- More complex implementation and limited language support
 
-## Disadvantages of Linked Lists
-- Memory Usage: Each element in a linked list requires extra storage for the reference/link part.
-- Sequential Access: Elements in a linked list must be accessed sequentially starting from the first node. Hence, direct access by position is not as efficient as in arrays.
+## Time Complexity Comparison
 
-Linked lists serve as a foundational data structure for building more complex structures like stacks, queues, and graphs, and understanding them is crucial for efficient algorithm implementation and optimization.
+| Operation           | Singly Linked | Doubly Linked | Circular      | Skip List         | XOR Linked    |
+|---------------------|---------------|---------------|---------------|-------------------|---------------|
+| Access (by index)   | O(n)          | O(n)          | O(n)          | O(n)              | O(n)          |
+| Search              | O(n)          | O(n)          | O(n)          | O(log n) expected | O(n)          |
+| Insertion (at head) | O(1)          | O(1)          | O(1)          | O(log n) expected | O(1)          |
+| Insertion (at tail) | O(n) / O(1)*  | O(1)          | O(1)          | O(log n) expected | O(1)          |
+| Insertion (middle)  | O(n)          | O(n)          | O(n)          | O(log n) expected | O(n)          |
+| Deletion (at head)  | O(1)          | O(1)          | O(1)          | O(log n) expected | O(1)          |
+| Deletion (at tail)  | O(n)          | O(1)          | O(1)          | O(log n) expected | O(1)          |
+| Deletion (middle)   | O(n)          | O(n)**        | O(n)**        | O(log n) expected | O(n)**        |
 
+\* O(1) if tail reference is maintained
+\** O(1) if the node pointer is given directly, O(n) if search is required first
+
+## Space Complexity Comparison
+
+| List Type           | Space Complexity per Node |
+|---------------------|---------------------------|
+| Singly Linked       | O(n) - One reference      |
+| Doubly Linked       | O(n) - Two references     |
+| Circular            | Same as base type         |
+| Skip List           | O(n log n) expected       |
+| XOR Linked          | O(n) - One reference      |
+
+## Common Applications
+
+- **Singly Linked List**: 
+  - Implementation of stacks and queues
+  - Symbol tables in compiler design
+  - Undo functionality in applications
+
+- **Doubly Linked List**:
+  - Browser's forward and backward navigation
+  - Music player's next and previous functionality
+  - LRU cache implementation
+
+- **Circular Linked List**:
+  - Round-robin scheduling
+  - Circular buffers
+  - Games with turns (like multiplayer card games)
+
+- **Skip List**:
+  - Alternative to balanced trees
+  - Database indexing
+  - Efficient implementation of sorted sets
+
+- **XOR Linked List**:
+  - Memory-constrained systems
+  - Embedded systems with limited resources
+  - Low-level system programming
+
+## Advantages and Disadvantages
+
+### Advantages
+- Dynamic size allocation
+- Efficient insertions and deletions
+- No need for contiguous memory
+- Various specialized implementations for different use cases
+
+### Disadvantages
+- Higher memory usage due to storage of references
+- No random access to elements
+- More complex implementation than arrays
+- Cache performance issues due to non-contiguous memory layout
+
+## Implementation Notes
+
+Each linked list variant in this repository is implemented as a standalone Python module with:
+
+- A `Node` class representing individual elements
+- A main list class with standard operations
+- Comprehensive docstrings and type annotations
+- Appropriate iterator implementations
+- Unit tests covering all functionality
+
+## Directory Structure
+
+```
+linked-list/
+│
+├── README.md              # This file
+├── singly_linked_list/    # Singly linked list implementation
+├── doubly_linked_list/    # Doubly linked list implementation
+├── circular_linked_list/  # Circular linked list implementation
+├── skip_list/             # Skip list implementation
+└── xor_linked_list/       # XOR linked list implementation
+```
+
+Each subdirectory contains:
+- Implementation file(s)
+- README.md with specific details
+- Unit tests
+- Example usage
