@@ -29,25 +29,25 @@ data-structures-python/
 ├── linked_structures/        # Linked structures
 │   ├── README.md             # Overview of Linked list Structures
 │   ├── Singly_linkedlist/
-│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── README.md        # Documentation for Singly Linked List arrays
 │   │   ├── Slinkedlist.py   # Implementation
 │   │   ├── usage.py         # example usage
 │   │   └── test.py          # Unit tests
 │   ├── Doubly_linkedlist/
-│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── README.md        # Documentation for Doubly Linked List arrays
 │   │   ├── Dlinkedlist.py   # Implementation
 │   │   ├── usage.py         # example usage
 │   │   └── test.py          # Unit tests
 │   ├── Circular_linkedlist/
-│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── README.md        # Documentation for Circular Linked List arrays
 │   │   ├── Clinkedlist.py   # Implementation
 │   │   ├── usage.py         # example usage
 │   │   └── test.py          # Unit tests
 │
 ├── Stack/                      # Stack Data Structure
-│   ├── README.md               # Overview of array structures
+│   ├── README.md               # Overview of Stack structures
 │   ├── Array-based Stack/
-│   │   ├── README.md               # Documentation for static arrays
+│   │   ├── README.md               # Documentation for Array Based Stack arrays
 │   │   ├── stack.py                # Implementation
 │   │   ├── usage.py                # example usage
 │   │   └── test_static_array.py    # Unit tests
