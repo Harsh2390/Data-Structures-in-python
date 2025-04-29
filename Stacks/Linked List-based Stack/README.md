@@ -129,10 +129,3 @@ for item in stack:
 # String representation
 print(stack)  # Prints "LinkedListStack([10])"
 ```
-
-## References and Further Reading
-
-1. Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
-2. Sedgewick, R., & Wayne, K. (2011). Algorithms (4th ed.). Addison-Wesley Professional.
-3. McKinney, W. (2017). Python for Data Analysis (2nd ed.). O'Reilly Media.
-4. Python Software Foundation. (n.d.). collections — Container datatypes. Python Documentation. https://docs.python.org/3/library/collections.html
