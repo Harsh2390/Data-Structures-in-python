@@ -27,12 +27,30 @@ data-structures-python/
 │       ├── ...
 │
 ├── linked_structures/        # Linked structures
-│   ├── README.md
-│   ├── singly_linked_list/
-│   │   ├── ...
-│   └── ...
+│   ├── README.md             # Overview of Linked list Structures
+│   ├── Singly_linkedlist/
+│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── Slinkedlist.py   # Implementation
+│   │   ├── usage.py         # example usage
+│   │   └── test.py          # Unit tests
+│   ├── Doubly_linkedlist/
+│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── Dlinkedlist.py   # Implementation
+│   │   ├── usage.py         # example usage
+│   │   └── test.py          # Unit tests
+│   ├── Circular_linkedlist/
+│   │   ├── README.md        # Documentation for static arrays
+│   │   ├── Clinkedlist.py   # Implementation
+│   │   ├── usage.py         # example usage
+│   │   └── test.py          # Unit tests
 │
-└── ...
+├── Stack/                      # Stack Data Structure
+│   ├── README.md               # Overview of array structures
+│   ├── Array-based Stack/
+│   │   ├── README.md               # Documentation for static arrays
+│   │   ├── stack.py                # Implementation
+│   │   ├── usage.py                # example usage
+│   │   └── test_static_array.py    # Unit tests
 ```
 ## Each Structure Features
 For each data structure, you'll find:
